@@ -1,3 +1,5 @@
+document.getElementById("loader").style.display = "block";
+
 fetch('https://quad-back.arjunsharma1152.repl.co/api/v1/alldata')
   .then(res => {
     return res.json();
@@ -20,7 +22,7 @@ fetch('https://quad-back.arjunsharma1152.repl.co/api/v1/alldata')
         </tr>`;
       c++;
     });
-
+    document.getElementById("loader").style.display = "none";
     document.getElementById(" table-body").innerHTML += displaydata;
   })
   .catch(err => {
